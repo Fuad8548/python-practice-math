@@ -1,1 +1,5 @@
-print("Hello world")
+import math
+
+print(math.sqrt(114921))
+
+
