@@ -6,7 +6,7 @@ maze = [
     ["W", "W", "W", "W", "W"]
 ]
 
-player_pos = (0, 0)
+player_pos = (0, 4)
 
 for row in enumerate(maze):
     for cell in row:
@@ -32,7 +32,9 @@ for row in enumerate(maze):
             new_row = player_pos[0] + delta[0]
             new_col = player_pos[1] + delta[1]
 
-            if maze[new_row][new_col] == "W":
+            if new_row < 0 or 0 <= new_col and new_col < len(maze[0]):
+                print("Nay! Out of the border!")
+            elif maze[new_row][new_col] == "W":
                 print("There is wall, try a different direction")
 
             player_pos = (new_row, new_col)
